@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include <stdlio.h>
 #include <time.h>
 /**
  * main - entry point
