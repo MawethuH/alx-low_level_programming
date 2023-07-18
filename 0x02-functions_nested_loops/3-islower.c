@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 /**
- * _isLower - checks for lower case.
+ * _islower - checks for lower case.
  * @c: interger parameter.
  * Return: 1 Success and 0 otherwise.
  */
 
-int _isLower(int c)
+int _islower(int c)
 {
 	if (c >= 97 && c <= 122)
 		return (1);
