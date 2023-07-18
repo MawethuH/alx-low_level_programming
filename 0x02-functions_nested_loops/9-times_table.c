@@ -14,21 +14,31 @@ void times_table(void)
 		for (j = 0; j < 10; j++)
 		{
 			m = i * j;
-			if (j == 0)
+			if (m == 0)
 			{
 			_putchar(m + '0');
 			}
-			if (m < 10 && j != 0)
-			{
-			_putchar(',');
-			_putchar(' ');
-			_putchar(' ');
-			_putchar(m + '0');
-			}
-			else if (m >= 10)
+			else if (m < 10 && m > 0)
 			{
 				_putchar(',');
 				_putchar(' ');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(m + '0');
+			}
+			else if (m >= 10 && m < 100)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar((m / 10) + '0');
+				_putchar((m % 10) + '0');
+			}
+			else if (m >= 100)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar((m / 100) + '0');
 				_putchar((m / 10) + '0');
 				_putchar((m % 10) + '0');
 			}
