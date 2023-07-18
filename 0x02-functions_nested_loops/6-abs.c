@@ -3,13 +3,13 @@
 
 /**
  * _abs - computes the absolute value.
- * @int: parameter.
+ * @i: parameter.
  * Return: the absolute value.
  */
 
-int _abs(int)
+int _abs(int i)
 {
-	int i, j;
+	int j;
 
 	if (i < 0)
 	{
