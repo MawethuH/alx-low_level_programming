@@ -4,7 +4,7 @@
 /**
  * print_sign - prints the sign of an interger.
  * @n: the parameter.
- *Return: 1 for +ve, 0 for zero and -1 for -ve.
+ * Return: 1 for +ve, 0 for zero and -1 for -ve.
  */
 
 int print_sign(int n)
@@ -19,7 +19,7 @@ int print_sign(int n)
 		_putchar('-');
 		return (-1);
 	}
-	else if (n == 0)
+	else
 	{
 		_putchar('0');
 		return (0);
