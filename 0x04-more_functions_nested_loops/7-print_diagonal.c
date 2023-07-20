@@ -22,9 +22,9 @@ void print_diagonal(int n)
 		for (i = 1; i <= n; i++)
 		{
 
-			int j = 1;
+			int j = 2;
 
-			while (j < (i + 1))
+			while (j < (i + 1) && i > 1)
 			{
 				_putchar(' ');
 				j++;
