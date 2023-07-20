@@ -2,7 +2,8 @@
 #include "main.h"
 
 /**
- * main - checks for uppercase
+ * _isupper - checks for uppercase letter
+ * @c: parameter
  * Return: 1 Success or 0
  */
 
