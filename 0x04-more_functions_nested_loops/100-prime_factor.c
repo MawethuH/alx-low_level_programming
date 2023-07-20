@@ -11,25 +11,14 @@ int main(void)
 	long int n, max, i;
 
 	n = 612852475143;
-	max = -1;
+	double square = sqrt(n);
 
-	while (n % 2 == 0)
+	for (i = 1; i <= square; i++)
 	{
-		max = 2;
-		n /= 2;
+		if (n % i == 0)
+			max = n / i;
 	}
 
-	for (i = 3; i <= sqrt(n); i = i + 2)
-	{
-		while (n % i == 0)
-		{
-			max = i;
-			n = n / i;
-		}
-	}
-
-	if (n > 2)
-		max = n;
-	printf("ld", max);
+	printf("ld\n", max);
 	return (0);
 }
