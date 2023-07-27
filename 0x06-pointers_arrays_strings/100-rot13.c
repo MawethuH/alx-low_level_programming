@@ -10,7 +10,7 @@
 char *rot13(char *s)
 {
 	int i, j;
-	char data[] =
+	char data1[] =
 "ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvxyz";
 	char datarot[] =
 "NOPQRSTUVXYZABCDEFGHIJKLMnopqrstuvxyzabcdefghijklm";
@@ -19,7 +19,7 @@ char *rot13(char *s)
 	{
 		for (j = 0; j < 52; j++)
 		{
-			if (s[i] == data[j])
+			if (s[i] == data1[j])
 			{
 				s[i] = datarot[j];
 				break;
