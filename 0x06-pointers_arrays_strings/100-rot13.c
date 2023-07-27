@@ -11,9 +11,9 @@ char *rot13(char *s)
 {
 	int i, j;
 	char data1[] =
-"ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvxyz";
+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char datarot[] =
-"NOPQRSTUVXYZABCDEFGHIJKLMnopqrstuvxyzabcdefghijklm";
+"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
