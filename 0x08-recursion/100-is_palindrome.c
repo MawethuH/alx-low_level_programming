@@ -34,12 +34,12 @@ int comparator(char *s, int n1, int n2)
 }
 
 /**
- * is_palidrome - entry.
+ * is_palindrome - entry.
  * @s: input.
  * Return: int.
  */
 
-int is_palidrome(char *s)
+int is_palindrome(char *s)
 {
 	if (*s == '\0')
 		return (1);
