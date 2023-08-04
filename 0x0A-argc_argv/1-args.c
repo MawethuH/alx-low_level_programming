@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = 0; i < argc; i++)
 			sum += sum;
-		printf("%d", sum);
+		printf("%d\n", sum);
 	}
 	return (0);
 }
