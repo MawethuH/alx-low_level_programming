@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "main.h"
-.
+
 /**
  * main - entry.
  * @argc: counter.
