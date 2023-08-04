@@ -20,19 +20,15 @@ int main(int argc, char *argv[])
 	{
 		for (i = 0; i < argc; i++)
 		{
-			e = argv[i];
+			k = atoi(arg[i]);
 
-			for (k = 0; k < strlen(e); k++)
+			if (k < 48 && k > 57)
 			{
-				if (e[k] < 48 || e[k] > 57)
-				{
-					printf("Error\n");
-					return (1);
-				}
+				printf("Error\n");
+				return (-1);
 			}
-
-			sum += atoi(e);
-			/*e++;*/
+			else
+				sum += k;
 		}
 		printf("%d\n", sum);
 	}
