@@ -10,13 +10,6 @@
 
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
-
-	if (argc > 1)
-	{
-		for (i = 1; i < argc - 1; i++)
-			sum += sum;
-		printf("%d\n", sum);
-	}
+	printf("%d\n", argc - 1);
 	return (0);
 }
