@@ -20,7 +20,7 @@ int word_len(char *str)
 		l++;
 		i++;
 	}
-	return (len);
+	return (l);
 }
 
 /**
