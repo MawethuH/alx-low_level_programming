@@ -56,7 +56,7 @@ char *_strcpy(char *dest, char *src)
  * Return: pointer to new dog or NULL.
  */
 
-dot_t *new_dog(char *name, float age, char *owner)
+dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
 	int len1, len2;
