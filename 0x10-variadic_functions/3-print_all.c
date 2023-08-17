@@ -2,51 +2,104 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+void _c(va_list arg);
+void _i(va_list arg);
+void _f(va_list arg);
+void _s(va_list arg);
+void print_all(const char * const format, ...);
+
+/**
+ * _c - ...
+ * @arg: ...
+ */
+
+void _c(va_list arg)
+{
+	char c;
+
+	c = va_arg(arg, int);
+	printf("%c", c);
+}
+
+/**
+ * _i - ...
+ * @arg: ...
+ */
+
+void _i(va_list arg)
+{
+	int i;
+
+	i = va_arg(arg, int);
+	printf("%d", i);
+}
+
+/**
+ * _f - ...
+ * @arg: ...
+ */
+
+void _f(va_list arg)
+{
+	float f;
+
+	f = va_arg(arg, double);
+	printf("%f", f);
+}
+
+/**
+ * _s - ...
+ * @arg: ...
+ */
+
+void _s(va_list arg)
+{
+	char *ptr;
+
+	ptr = va_arg(arg, char *);
+
+	if (ptr == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", ptr);
+}
+
 /**
  * print_all - ...
  * @format: ...
+ * @...: ...
  */
 
 void print_all(const char * const format, ...)
 {
-	int i = 0;
-	char *str;
-	va_list list;
+	va_list args;
+	int i = 0, j;
+	char *separator = "";
+	printer_t func[] = {
+		{"c", _c},
+		{"i", _i},
+		{"f", _f},
+		{"s", _s}
+	};
 
-	va_start(list, format);
-	while (formart == NULL)
+	va_start(args, format);
+
+	while (format && (*(format + i)))
 	{
-		printf("\n");
-		return;
-	}
-	while (format[i])
-	{
-		switch (format[i])
+		j = 0;
+
+		while (j < 4 && (*(format + i) != *(func[j].symbol)))
+			j++;
+		if (j < 4)
 		{
-				case 'c':
-					printf("%c", va_arg(list, int));
-					break;
-				case 'i':
-					printf("%d", va_arg(list, int));
-					break;
-				case 'f':
-					printf("%f", va_arg(list, double));
-					break;
-				case 's':
-					str = va_arg(list, char *);
-					if (str != NULL)
-					{
-						printf("%s", str);
-						break;
-					}
-					printf("(nil)");
-					break;
+			printf("%s", separator);
+			func[j].print(args);
+			separator = ", ";
 		}
-	if ((format[i] == 'c' || format[i] == 'i' || format[i] == 'f' ||
-		format[i] == 's') && format[(i + 1)] != '\0')
-		printf(", ");
-	i++;
+		i++;
 	}
-	va_end(list);
 	printf("\n");
+	va_end(args);
 }
