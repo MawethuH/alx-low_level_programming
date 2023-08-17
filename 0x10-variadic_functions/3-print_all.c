@@ -36,7 +36,7 @@ void print_all(const char * const format, ...)
 					if (!str)
 						str = "(ni)";
 					printf("%s%s", sep, str);
-					break
+					break;
 				default :
 					i++;
 					continue;
