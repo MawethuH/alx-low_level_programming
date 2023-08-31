@@ -22,6 +22,7 @@ unsigned int binary_to_uint(const char *b)
 		if (b[l - 1] == '1')
 			sum += base;
 		base *= 2;
+		l--;
 	}
 	return (sum);
 }
