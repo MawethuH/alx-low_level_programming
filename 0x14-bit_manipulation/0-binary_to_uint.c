@@ -15,11 +15,11 @@ unsigned int binary_to_uint(const char *b)
 	while (b[l])
 		l++;
 
-	for (l -= 1; l >= 0; l--)
+	while (l)
 	{
-		if (b[l] != '0' && b[l] != '1')
+		if (b[l - 1] != '0' && b[l - 1] != '1')
 			return (0);
-		if (b[l] == '1')
+		if (b[l - 1] == '1')
 			sum += base;
 		base *= 2;
 	}
