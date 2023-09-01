@@ -7,9 +7,20 @@
 
 void print_binary(unsigned long int n)
 {
-	if (n > 1)
+	unsigned long int num;
+	int j, i = 0;
+
+	for (j = 63; j >= 0; j--)
 	{
-		print_binary(n >> 1);
+		num = n >> j;
+		if (num & 1)
+		{
+			_putchar('1');
+			i++;
+		}
+		else if (i)
+			_putchar('0');
 	}
-	_putchar((n & 1) + '0');
+	if (!i)
+		_putchar('0');
 }
