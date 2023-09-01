@@ -10,7 +10,8 @@ void print_binary(unsigned long int n)
 	unsigned long int num;
 	int j, i = 0;
 
-	for (j = 63; j >= 0; j--)
+	j = 63;
+	while (j >= 0)
 	{
 		num = n >> j;
 		if (num & 1)
@@ -20,6 +21,8 @@ void print_binary(unsigned long int n)
 		}
 		else if (i)
 			_putchar('0');
+
+		j--;
 	}
 	if (!i)
 		_putchar('0');
